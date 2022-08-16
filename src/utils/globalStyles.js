@@ -16,4 +16,9 @@ body{
     font-size: ${rem(typeScale.paragraph)};
     font-family: ${fontFamily};
 }
+
+img{
+    width: 100%;
+    display: block;
+}
 `;
