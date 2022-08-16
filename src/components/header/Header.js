@@ -1,4 +1,4 @@
-import { icons, illustrations, logos } from "../../assests";
+import { icons, illustrations, logos } from "../../assets";
 import { Hero, Toggle, TopBar } from "./header.styled";
 
 export function Header() {

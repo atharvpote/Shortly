@@ -1,6 +1,6 @@
 import { hideVisually } from "polished";
 import styled from "styled-components";
-import { backgrounds } from "../../assests";
+import { backgrounds } from "../../assets";
 import {
   fontFamily,
   neutralColors,
