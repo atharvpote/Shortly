@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Header, Pitch } from "./components";
+import { Header, Pitch, Shorten } from "./components";
 import { GlobalStyles } from "./utils";
 
 const container = document.getElementById("root");
@@ -11,5 +11,6 @@ root.render(
     <GlobalStyles />
     <Header />
     <Pitch />
+    <Shorten />
   </StrictMode>
 );

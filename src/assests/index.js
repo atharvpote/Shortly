@@ -14,7 +14,10 @@ import hamburger from "./icons-hamburger-menu.svg";
 import title from "./logo.svg";
 
 export const backgrounds = {
-  desktop: { boostDesktop, boostMobile, shortenDesktop, shortenMobile },
+  boostDesktop,
+  boostMobile,
+  shortenDesktop,
+  shortenMobile,
 };
 
 export const icons = {

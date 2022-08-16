@@ -9,6 +9,7 @@ export const secondaryColors = {
 
 export const neutralColors = {
   gray: "hsl(0, 0%, 75%)",
+  lightGrey: "hsl(230, 25%, 95%)",
   grayishViolet: "hsl(257, 7%, 63%)",
   veryDarkBlue: "hsl(255, 11%, 22%)",
   veryDarkViolet: "hsl(260, 8%, 14%)",
