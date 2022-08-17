@@ -44,10 +44,10 @@ export function Features() {
 function bridgedCards(features) {
   const seq = [];
 
-  for (let i = 0; i < features.length; i++) {
-    if (i > 0) seq.push(<Bridge id={i} />);
+  for (let index in features) {
+    if (index > 0) seq.push(<Bridge id={index} />);
 
-    seq.push(featureCard(features[i]));
+    seq.push(featureCard(features[index]));
   }
 
   return seq;

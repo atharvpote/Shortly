@@ -5,6 +5,7 @@ export const Section = styled.section`
   background-color: ${neutralColors.lightGrey};
   text-align: center;
   color: ${neutralColors.grayishViolet};
+  padding-block-end: 5rem;
 `;
 
 export const Title = styled.h2`
