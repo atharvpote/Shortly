@@ -16,4 +16,5 @@ export const Button = styled.a`
   border-radius: 50px;
   display: inline-block;
   margin-block: 1rem;
+  cursor: pointer;
 `;
