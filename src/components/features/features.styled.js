@@ -6,6 +6,11 @@ export const Section = styled.section`
   text-align: center;
   color: ${neutralColors.grayishViolet};
   padding-block-end: 5rem;
+
+  p {
+    max-width: 50ch;
+    margin-inline: auto;
+  }
 `;
 
 export const Title = styled.h2`
@@ -23,6 +28,8 @@ export const Feature = styled.article`
   border-radius: 5px;
   padding: 2rem;
   position: relative;
+  max-width: 20rem;
+  margin-inline: auto;
 `;
 
 export const FeatureTitle = styled.h3`
