@@ -8,6 +8,7 @@ import {
   Subtitle,
   SocialIcons,
   Article,
+  Container,
 } from "./footer.styled";
 
 export function Footer() {
@@ -35,11 +36,13 @@ export function Footer() {
 
   return (
     <StyledFooter>
-      <Title>Shortly</Title>
-      {mapBlock(blocks)}
-      <Article>
-        <SocialIcons>{iconListItems(iconsList)}</SocialIcons>
-      </Article>
+      <Container>
+        <Title>Shortly</Title>
+        {mapBlock(blocks)}
+        <Article>
+          <SocialIcons>{iconListItems(iconsList)}</SocialIcons>
+        </Article>
+      </Container>
     </StyledFooter>
   );
 }

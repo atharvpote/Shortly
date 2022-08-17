@@ -8,8 +8,25 @@ export const StyledFooter = styled.footer`
   text-align: center;
 `;
 
+export const Container = styled.div`
+  max-width: 1200px;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+`;
+
 export const Title = styled.h2`
   font-size: ${typeScale.heading3};
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    text-align: left;
+    flex-basis: 30%;
+  }
 `;
 
 export const Article = styled.article`
@@ -19,12 +36,21 @@ export const Article = styled.article`
 export const Subtitle = styled.h3`
   font-size: ${typeScale.paragraph};
   margin-bottom: 0.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 1rem;
+    text-align: left;
+  }
 `;
 
 export const List = styled.ul`
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 export const Link = styled.a`
