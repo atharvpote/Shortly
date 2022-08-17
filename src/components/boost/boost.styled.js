@@ -10,6 +10,10 @@ export const Section = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (min-width: 768px) {
+    background-image: url(${backgrounds.boostDesktop});
+  }
+
   div {
     padding-block: 5rem;
   }

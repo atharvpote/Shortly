@@ -80,6 +80,10 @@ export const StyledPitch = styled.section`
   p {
     max-width: 50ch;
     margin-inline: auto;
+
+    @media (min-width: 768px) {
+      margin-inline: initial;
+    }
   }
 
   @media (min-width: 768px) {

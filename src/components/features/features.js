@@ -1,6 +1,7 @@
 import { icons } from "../../assets";
 import {
   Bridge,
+  Container,
   Desc,
   Feature,
   FeatureCards,
@@ -30,14 +31,16 @@ export function Features() {
   ];
 
   return (
-    <Section>
-      <Title>Advanced Statistics</Title>
-      <p>
-        Track how your links are performing across the web with our advanced
-        statistics dashboard.
-      </p>
-      <FeatureCards>{bridgedCards(features)}</FeatureCards>
-    </Section>
+    <Container>
+      <Section>
+        <Title>Advanced Statistics</Title>
+        <p>
+          Track how your links are performing across the web with our advanced
+          statistics dashboard.
+        </p>
+        <FeatureCards>{bridgedCards(features)}</FeatureCards>
+      </Section>
+    </Container>
   );
 }
 

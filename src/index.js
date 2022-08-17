@@ -9,10 +9,12 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <GlobalStyles />
-    <Header />
-    <Shorten />
-    <Features />
-    <Boost />
+    <main>
+      <Header />
+      <Shorten />
+      <Features />
+      <Boost />
+    </main>
     <Footer />
   </StrictMode>
 );
