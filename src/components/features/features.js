@@ -1,4 +1,5 @@
 import { icons } from "../../assets";
+import { keyGen } from "../../utils";
 import {
   Bridge,
   Container,
@@ -45,20 +46,20 @@ export function Features() {
 }
 
 function bridgedCards(features) {
-  const seq = [];
+  const sequence = [];
 
   for (let index in features) {
-    if (index > 0) seq.push(<Bridge id={index} />);
+    if (index > 0) sequence.push(<Bridge id={index} key={keyGen()} />);
 
-    seq.push(featureCard(features[index]));
+    sequence.push(featureCard(features[index], keyGen()));
   }
 
-  return seq;
+  return sequence;
 }
 
-function featureCard({ name, desc, icon }) {
+function featureCard({ name, desc, icon }, key) {
   return (
-    <Feature>
+    <Feature key={key}>
       <FeatureTitle>{name}</FeatureTitle>
       <Desc>{desc}</Desc>
       <Icon>

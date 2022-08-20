@@ -1,5 +1,5 @@
 import { icons } from "../../assets";
-import { preventDefault } from "../../utils";
+import { keyGen, preventDefault } from "../../utils";
 import {
   List,
   StyledFooter,
@@ -38,7 +38,7 @@ export function Footer() {
     <StyledFooter>
       <Container>
         <Title>Shortly</Title>
-        {mapBlock(blocks)}
+        {blockMapper(blocks)}
         <Article>
           <SocialIcons>{iconListItems(iconsList)}</SocialIcons>
         </Article>
@@ -47,17 +47,17 @@ export function Footer() {
   );
 }
 
-function mapBlock(blocks) {
+function blockMapper(blocks) {
   const articles = [];
 
-  for (const obj of blocks) articles.push(block(obj));
+  for (const block of blocks) articles.push(linkBlock(block, keyGen()));
 
   return articles;
 }
 
-function block({ title, links }) {
+function linkBlock({ title, links }, key) {
   return (
-    <Article>
+    <Article key={key}>
       <Subtitle>{title}</Subtitle>
       <List>{linkItem(links)}</List>
     </Article>
@@ -69,7 +69,7 @@ function linkItem(links) {
 
   for (const link of links)
     items.push(
-      <li>
+      <li key={keyGen()}>
         <Link href="#" onClick={preventDefault}>
           {link}
         </Link>
@@ -79,17 +79,17 @@ function linkItem(links) {
   return items;
 }
 
-function iconListItems(icons) {
+function iconListItems(iconsList) {
   const list = [];
 
-  for (const icon of icons) list.push(iconLink(icon));
+  for (const icon of iconsList) list.push(iconLink(icon, keyGen()));
 
   return list;
 }
 
-function iconLink({ icon, alt }) {
+function iconLink({ icon, alt }, key) {
   return (
-    <Link href="#" onClick={preventDefault}>
+    <Link href="#" onClick={preventDefault} key={key}>
       <img src={icon} alt={alt} />
     </Link>
   );

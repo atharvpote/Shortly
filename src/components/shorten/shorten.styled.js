@@ -87,6 +87,7 @@ export const SubmitButton = styled.button.attrs({ type: "submit" })`
   font-weight: ${weightScale.bold};
   color: ${neutralColors.white};
   font-size: ${typeScale.paragraph};
+  cursor: pointer;
 
   @media (min-width: 768px) {
     width: auto;
@@ -98,8 +99,53 @@ export const SubmitButton = styled.button.attrs({ type: "submit" })`
 export const ResultDiv = styled.div`
   background-color: ${neutralColors.lightGrey};
   min-height: 6rem;
+  padding-block-end: 2rem;
 `;
 
 export const Results = styled.div`
-  min-height: 10rem;
+  min-height: 6rem;
+`;
+
+export const ResultBlock = styled.div`
+  background-color: ${neutralColors.white};
+  margin-inline: 1.5rem;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  margin-block-end: 1rem;
+
+  &:last-of-type {
+    margin-block-end: initial;
+  }
+`;
+
+export const OriginalUrl = styled.p`
+  font-size: ${typeScale.paragraph};
+  color: ${primaryColors.darkViolet};
+  margin: 0.5rem 1rem;
+`;
+
+export const ShortUrl = styled(OriginalUrl)`
+  color: ${primaryColors.cyan};
+`;
+
+export const Divider = styled.div`
+  min-height: 1px;
+  background-color: ${neutralColors.lightGrey};
+
+  @media (min-width: 768px) {
+    ${hideVisually()}
+  }
+`;
+
+export const CopyButton = styled.button`
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  padding-block: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  background-color: ${primaryColors.cyan};
+  color: ${neutralColors.white};
+  font-weight: ${weightScale.bold};
+  font-size: ${typeScale.paragraph};
 `;
