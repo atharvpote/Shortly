@@ -79,26 +79,39 @@ export function Shorten() {
       </InputDiv>
       <ResultDiv>
         <Results />
-        {results.map(({ original, short }) => (
-          <ResultUrl original={original} short={short} key={keyGen()} />
+        {results.map(({ original, short }, index) => (
+          <ResultUrl
+            id={index + 1}
+            original={original}
+            short={short}
+            key={keyGen()}
+          />
         ))}
       </ResultDiv>
     </div>
   );
 }
 
-function ResultUrl({ original, short }) {
+function ResultUrl({ original, short, id }) {
+  const [activeButton, setActiveButton] = useState(null);
+
   return (
-    <ResultBlock key={keyGen()}>
+    <ResultBlock id={id} key={keyGen()}>
       <OriginalUrl>{original}</OriginalUrl>
       <Divider />
       <ShortUrl>{short}</ShortUrl>
       <CopyButton
+        active={activeButton === id}
         onClick={() => {
           navigator.clipboard.writeText(short);
+
+          setActiveButton(id);
+          setTimeout(() => {
+            setActiveButton(null);
+          }, 1000);
         }}
       >
-        Copy
+        {activeButton === id ? "Copied" : "Copy"}
       </CopyButton>
     </ResultBlock>
   );

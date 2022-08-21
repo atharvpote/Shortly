@@ -162,7 +162,8 @@ export const CopyButton = styled.button`
   padding-block: 0.75rem;
   border-radius: 5px;
   border: none;
-  background-color: ${primaryColors.cyan};
+  background-color: ${({ active }) =>
+    active ? primaryColors.darkViolet : primaryColors.cyan};
   color: ${neutralColors.white};
   font-weight: ${weightScale.bold};
   font-size: ${typeScale.paragraph};
