@@ -116,16 +116,34 @@ export const ResultBlock = styled.div`
   &:last-of-type {
     margin-block-end: initial;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const OriginalUrl = styled.p`
   font-size: ${typeScale.paragraph};
   color: ${primaryColors.darkViolet};
   margin: 0.5rem 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  @media (min-width: 768px) {
+    flex-basis: 40%;
+  }
 `;
 
 export const ShortUrl = styled(OriginalUrl)`
   color: ${primaryColors.cyan};
+
+  @media (min-width: 768px) {
+    justify-self: flex-end;
+  }
 `;
 
 export const Divider = styled.div`
@@ -148,4 +166,8 @@ export const CopyButton = styled.button`
   color: ${neutralColors.white};
   font-weight: ${weightScale.bold};
   font-size: ${typeScale.paragraph};
+
+  @media (min-width: 768px) {
+    flex-basis: 20%;
+  }
 `;

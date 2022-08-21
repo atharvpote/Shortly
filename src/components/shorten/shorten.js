@@ -22,7 +22,10 @@ export function Shorten() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    setResults(getFromLocalStorage());
+    const localData = getFromLocalStorage();
+
+    if (!localData) setResults([]);
+    else setResults(localData);
   }, []);
 
   useEffect(() => {
@@ -90,7 +93,13 @@ function ResultUrl({ original, short }) {
       <OriginalUrl>{original}</OriginalUrl>
       <Divider />
       <ShortUrl>{short}</ShortUrl>
-      <CopyButton>Copy</CopyButton>
+      <CopyButton
+        onClick={() => {
+          navigator.clipboard.writeText(short);
+        }}
+      >
+        Copy
+      </CopyButton>
     </ResultBlock>
   );
 }
