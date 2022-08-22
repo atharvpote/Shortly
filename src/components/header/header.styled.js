@@ -12,6 +12,10 @@ export const TopBar = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-inline: 1.5rem;
+
+  @media (min-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 export const Toggle = styled.button`
@@ -62,6 +66,7 @@ export const NavList = styled.ul`
     margin-inline: 2rem;
 
     @media (min-width: 768px) {
+      margin-inline: 0;
       padding: initial;
       display: flex;
       align-items: center;
@@ -119,6 +124,7 @@ export const SignUp = styled(NavLink)`
   @media (min-width: 768px) {
     color: ${neutralColors.white};
     padding-inline: 2rem;
+    /* flex-basis: 10rem; */
   }
 `;
 

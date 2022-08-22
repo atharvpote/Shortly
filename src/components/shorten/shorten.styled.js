@@ -126,6 +126,8 @@ export const ResultBlock = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin-inline: auto;
   }
 `;
 

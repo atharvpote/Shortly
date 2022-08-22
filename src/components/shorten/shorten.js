@@ -24,9 +24,8 @@ export function Shorten() {
   useEffect(() => {
     let localData = getFromLocalStorage();
 
-    if (localData.length > 3) localData = localData.slice(0, 3);
-
     if (!localData) setResults([]);
+    else if (localData.length > 3) setResults(localData.slice(0, 3));
     else setResults(localData);
   }, []);
 
