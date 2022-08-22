@@ -1,5 +1,5 @@
 import { hideVisually, lighten } from "polished";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { backgrounds } from "../../assets";
 import {
   fontFamily,
@@ -31,6 +31,7 @@ export const Form = styled.form`
     display: flex;
     gap: 1rem;
     padding: 2rem;
+    position: relative;
   }
 
   @media (min-width: 1200px) {
@@ -50,6 +51,13 @@ export const UrlInput = styled.input.attrs({ type: "text" })`
   border: none;
   font-size: ${typeScale.paragraph};
 
+  ${({ error }) => {
+    if (error.length)
+      return css`
+        border: 1px solid red;
+      `;
+  }}
+
   @media (min-width: 768px) {
     flex-basis: 80%;
     padding: 1rem;
@@ -66,10 +74,13 @@ export const UrlInput = styled.input.attrs({ type: "text" })`
 
 export const Error = styled.span`
   display: block;
-  min-height: 1rem;
+  min-height: 1.5rem;
+  color: red;
+  font-size: ${typeScale.helperText};
 
   @media (min-width: 768px) {
-    display: none;
+    position: absolute;
+    top: 70%;
   }
 `;
 

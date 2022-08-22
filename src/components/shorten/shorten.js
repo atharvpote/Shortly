@@ -20,6 +20,7 @@ export function Shorten() {
   const [url, setUrl] = useState("");
   const [response, setResponse] = useState(null);
   const [results, setResults] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     let localData = getFromLocalStorage();
@@ -55,7 +56,7 @@ export function Shorten() {
         <Form
           onSubmit={(e) => {
             preventDefault(e);
-            getUrls(url, setResponse);
+            getUrls(url, setResponse, setError);
           }}
         >
           <Label htmlFor="input" />
@@ -64,14 +65,17 @@ export function Shorten() {
             placeholder="Shorten a link here..."
             value={url}
             onChange={(e) => {
+              if (error.length) setError("");
+
               setUrl(e.target.value);
             }}
+            error={error}
           />
-          <Error />
+          <Error>{error}</Error>
           <SubmitButton
             onClick={(e) => {
               preventDefault(e);
-              getUrls(url, setResponse);
+              getUrls(url, setResponse, setError);
             }}
           >
             Shorten It!
@@ -118,12 +122,36 @@ function ResultUrl({ original, short, id }) {
   );
 }
 
-function getUrls(url, handler) {
+function getUrls(url, handler, errorHandler) {
   const key = `https://api.shrtco.de/v2/shorten?url=${url}`;
 
   fetch(key)
     .then((res) => res.json())
-    .then((res) => handler(res));
+    .then((res) => {
+      if (res.ok) {
+        errorHandler("");
+        handler(res);
+      } else handleError(res, errorHandler);
+    });
+}
+
+function handleError(res, handler) {
+  if (res.error_code == 1) handler("Please add a link");
+  if (res.error_code == 2) handler("Link is invalid");
+  if (res.error_code == 3)
+    handler("Too many requests, Wait a second and try again");
+  if (res.error_code == 4)
+    handler("IP-Address has been blocked because of violating our TOS");
+  if (res.error_code == 5) handler("shrtcode code (slug) already taken/in use");
+  if (res.error_code == 6) handler("Unknown error");
+  if (res.error_code == 7)
+    handler(`No code specified ("code" parameter is empty)`);
+  if (res.error_code == 8)
+    handler(
+      "Invalid code submitted (code not found/there is no such short-link)"
+    );
+  if (res.error_code == 9) handler("Missing required parameters");
+  if (res.error_code == 10) handler("Trying to shorten a disallowed Link");
 }
 
 function extractShortUrl(res) {
