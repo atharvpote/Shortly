@@ -114,7 +114,7 @@ export const NavLink = styled.a`
 export const SignUp = styled(NavLink)`
   background-color: ${primaryColors.cyan};
   display: block;
-  padding: 1rem 0;
+  padding-block: 1rem;
   border-radius: 50px;
   transition: background-color 0.5s;
 
@@ -127,8 +127,7 @@ export const SignUp = styled(NavLink)`
 
   @media (min-width: 768px) {
     color: ${neutralColors.white};
-    padding-inline: 2rem;
-    /* flex-basis: 10rem; */
+    padding: 0.75rem 2rem;
   }
 `;
 

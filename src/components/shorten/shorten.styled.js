@@ -51,8 +51,9 @@ export const UrlInput = styled.input.attrs({ type: "text" })`
   font-size: ${typeScale.paragraph};
 
   @media (min-width: 768px) {
-    flex-basis: 75%;
-    padding: 1.5rem;
+    flex-basis: 80%;
+    padding: 1rem;
+    font-size: ${typeScale.helperText};
   }
 
   &::placeholder {
@@ -60,11 +61,6 @@ export const UrlInput = styled.input.attrs({ type: "text" })`
     color: ${neutralColors.gray};
     font-family: ${fontFamily};
     font-size: ${typeScale.helperText};
-
-    @media (min-width: 768px) {
-      flex-basis: 80%;
-      font-size: ${typeScale.paragraph};
-    }
   }
 `;
 
@@ -98,8 +94,7 @@ export const SubmitButton = styled.button.attrs({ type: "submit" })`
 
   @media (min-width: 768px) {
     width: auto;
-    flex-basis: 25%;
-    font-size: ${typeScale.heading5};
+    flex-basis: 20%;
   }
 `;
 
@@ -129,6 +124,11 @@ export const ResultBlock = styled.div`
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
+    margin-inline: 1.5rem;
+    padding-block: 0.25rem;
+  }
+
+  @media (min-width: 1200px) {
     margin-inline: auto;
   }
 `;
@@ -143,7 +143,7 @@ export const OriginalUrl = styled.p`
   text-overflow: ellipsis;
 
   @media (min-width: 768px) {
-    flex-basis: 40%;
+    flex-basis: 50%;
   }
 `;
 
@@ -152,6 +152,7 @@ export const ShortUrl = styled(OriginalUrl)`
 
   @media (min-width: 768px) {
     justify-self: flex-end;
+    flex-basis: 40%;
   }
 `;
 
@@ -187,6 +188,6 @@ export const CopyButton = styled.button`
   }
 
   @media (min-width: 768px) {
-    flex-basis: 20%;
+    flex-basis: 10%;
   }
 `;
