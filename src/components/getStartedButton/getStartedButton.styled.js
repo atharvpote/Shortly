@@ -1,3 +1,4 @@
+import { lighten } from "polished";
 import styled from "styled-components";
 import {
   neutralColors,
@@ -17,4 +18,9 @@ export const Button = styled.a`
   display: inline-block;
   margin-block: 1rem;
   cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: ${lighten(0.2, primaryColors.cyan)};
+  }
 `;

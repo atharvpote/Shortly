@@ -22,7 +22,9 @@ export function Shorten() {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    const localData = getFromLocalStorage();
+    let localData = getFromLocalStorage();
+
+    if (localData.length > 3) localData = localData.slice(0, 3);
 
     if (!localData) setResults([]);
     else setResults(localData);

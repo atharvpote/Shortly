@@ -1,4 +1,4 @@
-import { hideVisually } from "polished";
+import { hideVisually, lighten } from "polished";
 import styled from "styled-components";
 import { backgrounds } from "../../assets";
 import {
@@ -30,7 +30,7 @@ export const Form = styled.form`
     background-position: 0;
     display: flex;
     gap: 1rem;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   @media (min-width: 1200px) {
@@ -88,6 +88,11 @@ export const SubmitButton = styled.button.attrs({ type: "submit" })`
   color: ${neutralColors.white};
   font-size: ${typeScale.paragraph};
   cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: ${lighten(0.2, primaryColors.cyan)};
+  }
 
   @media (min-width: 768px) {
     width: auto;
@@ -167,6 +172,13 @@ export const CopyButton = styled.button`
   color: ${neutralColors.white};
   font-weight: ${weightScale.bold};
   font-size: ${typeScale.paragraph};
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: ${({ active }) =>
+      active ? primaryColors.darkViolet : lighten(0.2, primaryColors.cyan)};
+  }
 
   @media (min-width: 768px) {
     flex-basis: 20%;
