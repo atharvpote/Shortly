@@ -1,7 +1,6 @@
 {
   "name": "Shortly",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Atharv Pote <atharvpote@gmail.com>",
   "license": "MIT",
   "source": "src/index.html",
