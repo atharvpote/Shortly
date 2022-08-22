@@ -52,7 +52,7 @@ Users should be able to:
 
 ### What I learned
 
-This was a fun project. It was a good to learn about handling state and APIs. Overall it was a nice learning experience
+This was a fun project. It was a good to learn about handling state and APIs, about how to map the data received from the APIs. Overall it was a nice learning experience
 
 ### Continued development
 
