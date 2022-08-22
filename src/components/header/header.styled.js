@@ -23,7 +23,7 @@ export const Toggle = styled.button`
   padding: 0;
   border: none;
   background: transparent;
-  width: 2.5rem;
+  width: 2rem;
   color: ${neutralColors.gray};
 
   @media (min-width: 768px) {
