@@ -103,8 +103,10 @@ export const NavLink = styled.a`
     color: ${neutralColors.gray};
     transition: color 0.5s;
 
-    &:hover {
-      color: ${neutralColors.veryDarkBlue};
+    @media (hover: hover) {
+      &:hover {
+        color: ${neutralColors.veryDarkBlue};
+      }
     }
   }
 `;
@@ -116,9 +118,11 @@ export const SignUp = styled(NavLink)`
   border-radius: 50px;
   transition: background-color 0.5s;
 
-  &:hover {
-    color: ${neutralColors.white};
-    background-color: ${lighten(0.2, primaryColors.cyan)};
+  @media (hover: hover) {
+    &:hover {
+      color: ${neutralColors.white};
+      background-color: ${lighten(0.2, primaryColors.cyan)};
+    }
   }
 
   @media (min-width: 768px) {

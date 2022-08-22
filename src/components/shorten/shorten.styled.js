@@ -90,8 +90,10 @@ export const SubmitButton = styled.button.attrs({ type: "submit" })`
   cursor: pointer;
   transition: background-color 0.5s;
 
-  &:hover {
-    background-color: ${lighten(0.2, primaryColors.cyan)};
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${lighten(0.2, primaryColors.cyan)};
+    }
   }
 
   @media (min-width: 768px) {
@@ -177,9 +179,11 @@ export const CopyButton = styled.button`
   cursor: pointer;
   transition: background-color 0.5s;
 
-  &:hover {
-    background-color: ${({ active }) =>
-      active ? primaryColors.darkViolet : lighten(0.2, primaryColors.cyan)};
+  @media (hover: hover) {
+    &:hover {
+      background-color: ${({ active }) =>
+        active ? primaryColors.darkViolet : lighten(0.2, primaryColors.cyan)};
+    }
   }
 
   @media (min-width: 768px) {
