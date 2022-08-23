@@ -25,6 +25,7 @@ export const Toggle = styled.button`
   background: transparent;
   width: 2rem;
   color: ${neutralColors.gray};
+  cursor: pointer;
 
   @media (min-width: 768px) {
     ${hideVisually()}
