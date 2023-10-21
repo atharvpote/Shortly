@@ -148,7 +148,7 @@ function handleError(res, handler) {
     handler(`No code specified ("code" parameter is empty)`);
   if (res.error_code == 8)
     handler(
-      "Invalid code submitted (code not found/there is no such short-link)"
+      "Invalid code submitted (code not found/there is no such short-link)",
     );
   if (res.error_code == 9) handler("Missing required parameters");
   if (res.error_code == 10) handler("Trying to shorten a disallowed Link");

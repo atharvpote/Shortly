@@ -151,7 +151,7 @@ export const Hero = styled.div`
       toSize: remToPx(46),
     },
     "280px",
-    "768px"
+    "768px",
   )};
 
   img {
@@ -168,7 +168,7 @@ export const Hero = styled.div`
         toSize: remToPx(34),
       },
       "768px",
-      "1440px"
+      "1440px",
     )};
 
     img {

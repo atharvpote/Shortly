@@ -73,7 +73,7 @@ function linkItem(links) {
         <Link href="#" onClick={preventDefault}>
           {link}
         </Link>
-      </li>
+      </li>,
     );
 
   return items;

@@ -16,5 +16,5 @@ root.render(
       <Boost />
     </main>
     <Footer />
-  </StrictMode>
+  </StrictMode>,
 );
